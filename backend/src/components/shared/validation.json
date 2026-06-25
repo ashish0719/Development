@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_validations",
+  "info": {
+    "displayName": "Validation"
+  },
+  "options": {},
+  "attributes": {
+    "requiredMessage": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "minLength": {
+      "type": "integer"
+    },
+    "minLengthMessage": {
+      "type": "string"
+    },
+    "maxLength": {
+      "type": "integer"
+    },
+    "maxLengthMessage": {
+      "type": "string"
+    },
+    "pattern": {
+      "type": "string"
+    },
+    "patternMessage": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

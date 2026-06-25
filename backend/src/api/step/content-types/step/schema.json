@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "steps",
+  "info": {
+    "singularName": "step",
+    "pluralName": "steps",
+    "displayName": "Step"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "stepNumber": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "form-fields.input-field",
+        "form-fields.text-area",
+        "form-fields.select",
+        "form-fields.radio",
+        "form-fields.check-box",
+        "sections.plan-section",
+        "sections.addon-section"
+      ]
+    },
+    "form": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::form.form",
+      "inversedBy": "steps"
+    },
+    "stepType": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "plans",
+        "addons",
+        "summary"
+      ]
+    }
+  }
+}

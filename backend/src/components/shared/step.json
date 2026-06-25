@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_steps",
+  "info": {
+    "displayName": "step"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "stepType": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "plans",
+        "addons",
+        "summary"
+      ]
+    },
+    "order": {
+      "type": "integer"
+    },
+    "fields": {
+      "type": "component",
+      "component": "form-fields.input-field",
+      "repeatable": true
+    },
+    "plans": {
+      "type": "component",
+      "component": "shared.plans",
+      "repeatable": true
+    },
+    "addons": {
+      "type": "component",
+      "component": "shared.addon",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

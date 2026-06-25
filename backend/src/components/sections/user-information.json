@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_user_informations",
+  "info": {
+    "displayName": "User Information"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "fields": {
+      "type": "component",
+      "component": "form-fields.input-field",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

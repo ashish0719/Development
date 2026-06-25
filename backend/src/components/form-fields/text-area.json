@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_form_fields_text_area_s",
+  "info": {
+    "displayName": "TextArea "
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "component",
+      "component": "shared.validation",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_addon_sections",
+  "info": {
+    "displayName": "Addon Section"
+  },
+  "options": {},
+  "attributes": {
+    "addons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::addon.addon"
+    }
+  },
+  "config": {}
+}

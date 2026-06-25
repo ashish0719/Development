@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_form_fields_input_fields",
+  "info": {
+    "displayName": "Input Field"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "inputType": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "tel",
+        "password",
+        "number",
+        "textarea"
+      ]
+    },
+    "validation": {
+      "type": "component",
+      "component": "shared.validation",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

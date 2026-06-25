@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "multi_step_forms",
+  "info": {
+    "singularName": "multi-step-form",
+    "pluralName": "multi-step-forms",
+    "displayName": "Multi Step Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "nextButtonText": {
+      "type": "string"
+    },
+    "previousButtonText": {
+      "type": "string"
+    },
+    "confirmButtonText": {
+      "type": "string"
+    },
+    "Information": {
+      "type": "component",
+      "component": "sections.user-information",
+      "repeatable": false
+    },
+    "Plans": {
+      "type": "component",
+      "component": "shared.plans",
+      "repeatable": true
+    },
+    "Addons": {
+      "type": "component",
+      "component": "shared.addon",
+      "repeatable": true
+    }
+  }
+}

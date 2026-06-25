@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_steps",
+  "info": {
+    "displayName": "Step"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "stepType": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "plans",
+        "addons",
+        "summary"
+      ]
+    }
+  },
+  "config": {}
+}

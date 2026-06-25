@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_form_fields_radios",
+  "info": {
+    "displayName": "Radio"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "component",
+      "component": "shared.validation",
+      "repeatable": false
+    },
+    "options": {
+      "type": "component",
+      "component": "shared.options",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

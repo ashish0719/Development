@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_form_fields_selects",
+  "info": {
+    "displayName": "Select"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "component",
+      "component": "shared.validation",
+      "repeatable": false
+    },
+    "options": {
+      "type": "component",
+      "component": "shared.options",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

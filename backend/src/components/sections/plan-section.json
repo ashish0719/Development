@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_plan_sections",
+  "info": {
+    "displayName": "Plan Section"
+  },
+  "options": {},
+  "attributes": {
+    "plans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::plan.plan"
+    }
+  },
+  "config": {}
+}

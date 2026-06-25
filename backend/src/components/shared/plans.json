@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_plans",
+  "info": {
+    "displayName": "Plans"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "billingType": {
+      "type": "enumeration",
+      "enum": [
+        "monthly",
+        "yearly"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_form_fields_check_boxes",
+  "info": {
+    "displayName": "CheckBox"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "fieldName": {
+      "type": "string"
+    },
+    "options": {
+      "type": "component",
+      "component": "shared.options",
+      "repeatable": true
+    },
+    "validation": {
+      "type": "component",
+      "component": "shared.validation",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

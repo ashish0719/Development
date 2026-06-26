@@ -20,10 +20,6 @@
     "stepNumber": {
       "type": "integer"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
     "Blocks": {
       "type": "dynamiczone",
       "components": [

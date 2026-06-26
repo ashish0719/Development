@@ -9,6 +9,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::plan.plan"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "requiredMessage": {
+      "type": "string"
     }
   },
   "config": {}

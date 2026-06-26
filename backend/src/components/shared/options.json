@@ -4,6 +4,13 @@
     "displayName": "options"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
   "config": {}
 }

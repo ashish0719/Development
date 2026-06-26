@@ -7,7 +7,11 @@ type Props = {
 };
 
 export default function PlanSection({ step }: Props) {
-  const { watch, setValue } = useFormContext();
+  const {
+    watch,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
   const billing = watch("billing");
   const selectedPlan = watch("plan");
@@ -29,7 +33,13 @@ export default function PlanSection({ step }: Props) {
           return (
             <div
               key={plan.id}
-              onClick={() => setValue("plan", plan)}
+              onClick={() =>
+                setValue("plan", plan, {
+                  shouldValidate: true,
+                  shouldDirty: true,
+                  shouldTouch: true,
+                })
+              }
               className={`cursor-pointer rounded-xl border p-5 transition-all ${
                 active
                   ? "border-blue-600 bg-blue-50"
@@ -64,6 +74,12 @@ export default function PlanSection({ step }: Props) {
         })}
       </div>
 
+      {errors.plan && (
+        <p className="text-sm font-medium text-red-500">
+          {errors.plan.message as string}
+        </p>
+      )}
+
       <div className="flex items-center justify-center gap-6 rounded-xl bg-slate-100 py-4">
         <span
           className={`font-medium ${
@@ -76,7 +92,9 @@ export default function PlanSection({ step }: Props) {
         <button
           type="button"
           onClick={() =>
-            setValue("billing", billing === "monthly" ? "yearly" : "monthly")
+            setValue("billing", billing === "monthly" ? "yearly" : "monthly", {
+              shouldDirty: true,
+            })
           }
           className="relative h-6 w-12 rounded-full bg-blue-900"
         >

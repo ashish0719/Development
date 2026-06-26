@@ -86,6 +86,8 @@ export interface SectionsPlanSection extends Struct.ComponentSchema {
   };
   attributes: {
     plans: Schema.Attribute.Relation<'oneToMany', 'api::plan.plan'>;
+    required: Schema.Attribute.Boolean;
+    requiredMessage: Schema.Attribute.String;
   };
 }
 
@@ -147,7 +149,10 @@ export interface SharedOptions extends Struct.ComponentSchema {
   info: {
     displayName: 'options';
   };
-  attributes: {};
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
 }
 
 export interface SharedPlans extends Struct.ComponentSchema {

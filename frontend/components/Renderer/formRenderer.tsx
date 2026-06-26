@@ -22,7 +22,7 @@ export default function FormRenderer({ field }: Props) {
     case "form-fields.radio":
       return <RadioField field={field} />;
 
-    case "form-fields.checkbox":
+    case "form-fields.check-box":
       return <CheckboxField field={field} />;
 
     default:

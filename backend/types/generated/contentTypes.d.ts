@@ -620,7 +620,6 @@ export interface ApiStepStep extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::step.step'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'title'>;
     stepNumber: Schema.Attribute.Integer;
     stepType: Schema.Attribute.Enumeration<
       ['info', 'plans', 'addons', 'summary']

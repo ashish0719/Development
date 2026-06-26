@@ -484,75 +484,19 @@ export interface ApiFormForm extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.String;
+    desktopSidebarImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     isActive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::form.form'> &
       Schema.Attribute.Private;
+    mobileSidebarImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    sideImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Schema.Attribute.UID<'title'>;
     steps: Schema.Attribute.Relation<'oneToMany', 'api::step.step'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiMultiStepFormMultiStepForm extends Struct.SingleTypeSchema {
-  collectionName: 'multi_step_forms';
-  info: {
-    displayName: 'Multi Step Form';
-    pluralName: 'multi-step-forms';
-    singularName: 'multi-step-form';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Addons: Schema.Attribute.Component<'shared.addon', true>;
-    confirmButtonText: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Information: Schema.Attribute.Component<'sections.user-information', false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::multi-step-form.multi-step-form'
-    > &
-      Schema.Attribute.Private;
-    nextButtonText: Schema.Attribute.String;
-    Plans: Schema.Attribute.Component<'shared.plans', true>;
-    previousButtonText: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPagePage extends Struct.CollectionTypeSchema {
-  collectionName: 'pages';
-  info: {
-    displayName: 'Page';
-    pluralName: 'pages';
-    singularName: 'page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.DynamicZone<['shared.hero-banner']>;
-    slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1187,8 +1131,6 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::addon.addon': ApiAddonAddon;
       'api::form.form': ApiFormForm;
-      'api::multi-step-form.multi-step-form': ApiMultiStepFormMultiStepForm;
-      'api::page.page': ApiPagePage;
       'api::plan.plan': ApiPlanPlan;
       'api::step.step': ApiStepStep;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -30,7 +30,17 @@
       "target": "api::step.step",
       "mappedBy": "form"
     },
-    "sideImage": {
+    "desktopSidebarImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "mobileSidebarImage": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

@@ -15,6 +15,16 @@
     },
     "requiredMessage": {
       "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "compact",
+        "horizontal",
+        "minimal",
+        "featured"
+      ]
     }
   },
   "config": {}

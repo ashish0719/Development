@@ -601,6 +601,7 @@ export interface ApiStepStep extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    backButton: Schema.Attribute.Component<'shared.button', false>;
     Blocks: Schema.Attribute.DynamicZone<
       [
         'form-fields.input-field',
@@ -619,6 +620,7 @@ export interface ApiStepStep extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::step.step'> &
       Schema.Attribute.Private;
+    nextButton: Schema.Attribute.Component<'shared.button', false>;
     publishedAt: Schema.Attribute.DateTime;
     stepNumber: Schema.Attribute.Integer;
     stepType: Schema.Attribute.Enumeration<

@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import PlanCardRenderer from "@/components/Renderer/planRenderer";
 
 type Props = {
   step: any;
@@ -27,51 +28,22 @@ export default function PlanSection({ step }: Props) {
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-3 gap-5">
-        {plans.map((plan: any) => {
-          const active = selectedPlan?.id === plan.id;
-
-          return (
-            <div
-              key={plan.id}
-              onClick={() =>
-                setValue("plan", plan, {
-                  shouldValidate: true,
-                  shouldDirty: true,
-                  shouldTouch: true,
-                })
-              }
-              className={`cursor-pointer rounded-xl border p-5 transition-all ${
-                active
-                  ? "border-blue-600 bg-blue-50"
-                  : "border-gray-300 hover:border-blue-600"
-              }`}
-            >
-              <div className="mb-10 flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
-                {plan.icon ? (
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${plan.icon.url}`}
-                    alt={plan.title}
-                    className="h-8 w-8"
-                  />
-                ) : (
-                  <span>🎮</span>
-                )}
-              </div>
-
-              <h3 className="text-lg font-semibold">{plan.title}</h3>
-
-              <p className="mt-1 text-gray-500">
-                {billing === "monthly"
-                  ? `$${plan.monthlyPrice}/mo`
-                  : `$${plan.yearlyPrice}/yr`}
-              </p>
-
-              {billing === "yearly" && (
-                <p className="mt-2 text-sm text-blue-700">2 months free</p>
-              )}
-            </div>
-          );
-        })}
+        {plans.map((plan: any) => (
+          <PlanCardRenderer
+            key={plan.id}
+            variant={block.variant}
+            plan={plan}
+            billing={billing}
+            active={selectedPlan?.id === plan.id}
+            onSelect={() =>
+              setValue("plan", plan, {
+                shouldValidate: true,
+                shouldDirty: true,
+                shouldTouch: true,
+              })
+            }
+          />
+        ))}
       </div>
 
       {errors.plan && (

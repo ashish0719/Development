@@ -15,6 +15,15 @@ type Props = {
   form: any;
 };
 
+const buttonVariants: Record<string, string> = {
+  primary: "bg-blue-700 text-white hover:bg-blue-800",
+  secondary: "bg-gray-500 text-white hover:bg-gray-600",
+  success: "bg-green-600 text-white hover:bg-green-700",
+  danger: "bg-red-600 text-white hover:bg-red-700",
+  outline: "border border-gray-400 text-gray-700 hover:bg-gray-100",
+  ghost: "bg-transparent text-gray-500 hover:text-gray-700",
+};
+
 export default function MultiStepForm({ form }: Props) {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -132,25 +141,31 @@ export default function MultiStepForm({ form }: Props) {
               type="button"
               disabled={currentStep === 0}
               onClick={() => setCurrentStep((prev) => prev - 1)}
-              className="text-gray-500"
+              className={`rounded-lg px-6 py-3 transition ${
+                buttonVariants[step.backButton?.variant || "ghost"]
+              } ${currentStep === 0 ? "cursor-not-allowed opacity-50" : ""}`}
             >
-              Go Back
+              {step.backButton?.text || "Go Back"}
             </button>
 
             {currentStep === steps.length - 1 ? (
               <button
                 type="submit"
-                className="rounded-lg bg-blue-700 px-6 py-3 text-white"
+                className={`rounded-lg px-6 py-3 transition ${
+                  buttonVariants[step.nextButton?.variant || "primary"]
+                }`}
               >
-                Confirm
+                {step.nextButton?.text || "Confirm"}
               </button>
             ) : (
               <button
                 type="button"
                 onClick={handleNext}
-                className="rounded-lg bg-blue-700 px-6 py-3 text-white"
+                className={`rounded-lg px-6 py-3 transition ${
+                  buttonVariants[step.nextButton?.variant || "primary"]
+                }`}
               >
-                Next Step
+                {step.nextButton?.text || "Next Step"}
               </button>
             )}
           </div>

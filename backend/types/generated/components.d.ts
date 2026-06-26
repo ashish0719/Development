@@ -88,6 +88,9 @@ export interface SectionsPlanSection extends Struct.ComponentSchema {
     plans: Schema.Attribute.Relation<'oneToMany', 'api::plan.plan'>;
     required: Schema.Attribute.Boolean;
     requiredMessage: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<
+      ['default', 'compact', 'horizontal', 'minimal', 'featured']
+    >;
   };
 }
 
@@ -126,6 +129,19 @@ export interface SharedAddon extends Struct.ComponentSchema {
     planType: Schema.Attribute.Enumeration<['Yearly', 'Monthly']>;
     price: Schema.Attribute.Decimal;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+    variant: Schema.Attribute.Enumeration<
+      ['primary', 'secondary', 'success', 'danger', 'outline', 'ghost']
+    >;
   };
 }
 
@@ -219,6 +235,7 @@ declare module '@strapi/strapi' {
       'sections.step': SectionsStep;
       'sections.user-information': SectionsUserInformation;
       'shared.addon': SharedAddon;
+      'shared.button': SharedButton;
       'shared.hero-banner': SharedHeroBanner;
       'shared.options': SharedOptions;
       'shared.plans': SharedPlans;

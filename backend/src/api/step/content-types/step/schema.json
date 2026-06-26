@@ -46,6 +46,16 @@
         "addons",
         "summary"
       ]
+    },
+    "nextButton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "backButton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   }
 }
